@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+
+<body>
+
+<h1><center>КРЕДИТНЫЙ КАЛЬКУЛЯТОР</h1>
+
+<br>
+
+<form th:method="POST" th:action="@{/calculator/calculations}" th:object="${calculation}">
+
+    <label for="creditAmount">Сумма кредита, руб.</label>
+    <input type="text" th:field="*{creditAmount}" id="creditAmount"/>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <label for="percentRate">Процентная ставка, % годовых</label>
+    <input type="text" th:field="*{percentRate}" id="percentRate"/>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <label for="creditTerm">Срок кредита, месяцев</label>
+    <input type="text" th:field="*{creditTerm}" id="creditTerm"/>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <label for="currentDate">Дата: </label>
+    <input type="date" th:field="*{currentDate}" id="currentDate"/>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <label for="repaymentType">Порядок погашения</label>
+    <select id="repaymentType" name="repaymentType">
+        <option value="Annuity">Аннуитетный</option>
+        <option value="Differentiated">Дифференцированный</option>
+    </select>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <input type="submit" value="График платежей"/>
+
+</form>
+
+</body>
+</html>

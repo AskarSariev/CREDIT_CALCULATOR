@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты расчета</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        vertical-align: center;
+        text-align: center;
+    }
+    input {
+        background: #008EB0; /* Синий цвет фона */
+        color: #fff; /* Белый цвет текста */
+        border: none; /* Убираем рамку */
+        display: inline;
+    }
+    form {
+        white-space:nowrap;
+        display: inline;
+    }
+</style>
+<body>
+
+<h1><center>Результаты расчета</h1>
+
+<br>
+
+<!--<input type="button" value="ADD" onclick="window.location.href='/tasks/new'"/>-->
+
+<br>
+<br>
+
+<table style="width:100%">
+    <tr>
+        <th>Дата</th>
+        <th>Платеж</th>
+        <th>Проценты</th>
+        <th>Тело кредита</th>
+        <th>Остаток</th>
+    </tr>
+    <div th:each="calc : ${calculations}">
+
+        <tr>
+            <td>
+                <a th:text="${#dates.format(calc.getCurrentDate(), 'dd.MM.yyyy')}">calc</a>
+            </td>
+
+            <td>
+                <a th:text="${#numbers.formatDecimal(calc.getMonthlyPaymentAmount(), 2, 2)}">calc</a>
+            </td>
+
+            <td>
+                <a th:text="${#numbers.formatDecimal(calc.getMonthlyPercent(), 2, 2)}">calc</a>
+            </td>
+
+            <td>
+                <a th:text="${#numbers.formatDecimal(calc.getBodyOfCredit(), 2, 2)}">calc</a>
+            </td>
+
+            <td>
+                <a th:text="${#numbers.formatDecimal(calc.getRemainder(), 2, 2)}">calc</a>
+            </td>
+<!--            <td>-->
+<!--                <form th:method="GET" th:action="@{/tasks/{id}/edit(id=${task.getId()})}">-->
+<!--                    <input type="submit" value="EDIT"/>-->
+<!--                </form>-->
+<!--                <form th:method="DELETE" th:action="@{/tasks/{id}(id=${task.getId()})}">-->
+<!--                    <input type="submit" value="DELETE"/>-->
+<!--                </form>-->
+<!--            </td>-->
+        </tr>
+
+    </div>
+</table>
+
+</body>
+</html>
