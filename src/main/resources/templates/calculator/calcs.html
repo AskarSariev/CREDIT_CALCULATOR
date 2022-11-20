@@ -30,7 +30,11 @@
 
 <br>
 
-<!--<input type="button" value="ADD" onclick="window.location.href='/tasks/new'"/>-->
+<input type="button" value="Вернуться" onclick="window.location.href='/calculator'"/>
+<br/>
+
+<h2>Переплата: </h2>
+<h2 th:text="${#numbers.formatDecimal(overPayment, 2, 2)}" id="overPayment"></h2>
 
 <br>
 <br>
@@ -65,14 +69,6 @@
             <td>
                 <a th:text="${#numbers.formatDecimal(calc.getRemainder(), 2, 2)}">calc</a>
             </td>
-<!--            <td>-->
-<!--                <form th:method="GET" th:action="@{/tasks/{id}/edit(id=${task.getId()})}">-->
-<!--                    <input type="submit" value="EDIT"/>-->
-<!--                </form>-->
-<!--                <form th:method="DELETE" th:action="@{/tasks/{id}(id=${task.getId()})}">-->
-<!--                    <input type="submit" value="DELETE"/>-->
-<!--                </form>-->
-<!--            </td>-->
         </tr>
 
     </div>

@@ -15,6 +15,7 @@
 
     <label for="creditAmount">Сумма кредита, руб.</label>
     <input type="text" th:field="*{creditAmount}" id="creditAmount"/>
+    <div style="color:red" th:if="${#fields.hasErrors('creditAmount')}" th:errors="*{creditAmount}">CreditAmount Error</div>
 
     <br/>
     <br/>
@@ -22,6 +23,7 @@
 
     <label for="percentRate">Процентная ставка, % годовых</label>
     <input type="text" th:field="*{percentRate}" id="percentRate"/>
+    <div style="color:red" th:if="${#fields.hasErrors('percentRate')}" th:errors="*{percentRate}">CreditAmount Error</div>
 
     <br/>
     <br/>
@@ -29,12 +31,13 @@
 
     <label for="creditTerm">Срок кредита, месяцев</label>
     <input type="text" th:field="*{creditTerm}" id="creditTerm"/>
+    <div style="color:red" th:if="${#fields.hasErrors('creditTerm')}" th:errors="*{creditTerm}">CreditAmount Error</div>
 
     <br/>
     <br/>
     <br/>
 
-    <label for="currentDate">Дата: </label>
+    <label for="currentDate">Дата</label>
     <input type="date" th:field="*{currentDate}" id="currentDate"/>
 
     <br/>

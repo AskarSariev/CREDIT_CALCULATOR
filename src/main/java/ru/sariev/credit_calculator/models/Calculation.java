@@ -1,14 +1,19 @@
 package ru.sariev.credit_calculator.models;
 
-
 import org.springframework.format.annotation.DateTimeFormat;
-
-
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.util.Date;
 
 public class Calculation {
+    @Min(value = 10000, message = "Минимальная сумма 10 000 руб.")
     private int creditAmount; // Сумма кредита
-    private int percentRate; // Процентная ставка
+
+    @Min(value = 1, message = "Минимальная процентная ставка 1%")
+    private double percentRate; // Процентная ставка
+
+    @Min(value = 1, message = "Минимальный срок кредитования 1 месяц")
+    @Max(value = 360, message = "Максимальный срок кредитования 360 месяцев")
     private int creditTerm; // Срок кредитования
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -22,7 +27,7 @@ public class Calculation {
     public Calculation() {
     }
 
-    public Calculation(int creditAmount, int percentRate, int creditTerm, Date currentDate, String repaymentType) {
+    public Calculation(int creditAmount, double percentRate, int creditTerm, Date currentDate, String repaymentType) {
         this.creditAmount = creditAmount;
         this.percentRate = percentRate;
         this.creditTerm = creditTerm;
@@ -46,11 +51,11 @@ public class Calculation {
         this.creditAmount = creditAmount;
     }
 
-    public int getPercentRate() {
+    public double getPercentRate() {
         return percentRate;
     }
 
-    public void setPercentRate(int percentRate) {
+    public void setPercentRate(double percentRate) {
         this.percentRate = percentRate;
     }
 
