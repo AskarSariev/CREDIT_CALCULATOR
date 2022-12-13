@@ -26,12 +26,15 @@ public class UserValidator implements Validator {
 
     @Override
     public void validate(Object o, Errors errors) {
+
         User user = (User) o;
+
         try {
             userDetailsService.loadUserByUsername(user.getUsername());
         } catch (UsernameNotFoundException ignored) {
             return;
         }
+
         errors.rejectValue("username", "", "Пользователь с таким именем уже существует");
     }
 }

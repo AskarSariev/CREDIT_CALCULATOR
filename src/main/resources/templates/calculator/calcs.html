@@ -12,16 +12,21 @@
         border: 1px solid black;
         vertical-align: center;
         text-align: center;
+        font-size: 20px;
     }
     input {
         background: #008EB0; /* Синий цвет фона */
-        color: #fff; /* Белый цвет текста */
         border: none; /* Убираем рамку */
         display: inline;
     }
     form {
         white-space:nowrap;
         display: inline;
+    }
+    .but {
+        background: #fac91b;
+        font-size: 25px;
+        border-radius: 10px 10px 10px 10px;
     }
 </style>
 <body>
@@ -30,7 +35,7 @@
 
 <br>
 
-<input type="button" value="Вернуться" onclick="window.location.href='/calculator'"/>
+<input class="but" type="button" value="Вернуться" onclick="window.location.href='/calculator'"/>
 <br/>
 
 <h2>Переплата: </h2>

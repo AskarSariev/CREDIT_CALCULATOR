@@ -1,7 +1,6 @@
 package ru.sariev.credit_calculator.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jmx.export.annotation.ManagedOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import ru.sariev.credit_calculator.models.User;
 import ru.sariev.credit_calculator.services.RegistrationService;
 import ru.sariev.credit_calculator.util.UserValidator;
+
 import javax.validation.Valid;
 
 @Controller
@@ -32,7 +32,9 @@ public class AuthController {
     }
 
     @PostMapping("/registration")
-    public String performRegistration(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
+    public String performRegistration(@ModelAttribute("user") @Valid User user,
+                                      BindingResult bindingResult) {
+
         userValidator.validate(user, bindingResult);
 
         if (bindingResult.hasErrors()) {
@@ -40,6 +42,7 @@ public class AuthController {
         }
 
         registrationService.register(user);
+
         return "redirect:/login";
     }
 }

@@ -24,7 +24,7 @@ public class UserDetailsService implements org.springframework.security.core.use
         Optional<User> user = userRepository.findByUsername(username);
 
         if (user.isEmpty()) {
-            throw new UsernameNotFoundException("User not found");
+            throw new UsernameNotFoundException("Пользователь не найден");
         }
 
         return new UserDetails(user.get());

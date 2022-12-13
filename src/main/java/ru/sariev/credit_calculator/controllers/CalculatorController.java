@@ -25,22 +25,29 @@ public class CalculatorController {
 
     @GetMapping()
     public String mainPage(@ModelAttribute("calculation") Calculation calculation) {
+
         calculation.setCreditAmount(calculatorService.getEnteredCreditAmount());
         calculation.setPercentRate(calculatorService.getEnteredPercentRate());
         calculation.setCreditTerm(calculatorService.getEnteredCreditTerm());
         calculation.setCurrentDate(calculatorService.getEnteredCurrentDate());
         calculation.setRepaymentType(calculatorService.getEnteredRepaymentType());
+
         return "calculator/main";
     }
 
     @PostMapping("/calculations")
-    public String create(@ModelAttribute("calculation") @Valid Calculation calculation, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors())
+    public String create(@ModelAttribute("calculation") @Valid Calculation calculation,
+                         BindingResult bindingResult, Model model) {
+
+        if (bindingResult.hasErrors()) {
             return "calculator/main";
+        }
 
         model.addAttribute("calculations", calculatorService.getCalculationList(calculation));
         model.addAttribute("overPayment", calculatorService.getOverPayment());
+
         calculatorService.setOverPayment(0.0);
+
         return "calculator/calcs";
     }
 }

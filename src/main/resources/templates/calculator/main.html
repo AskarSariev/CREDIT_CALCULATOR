@@ -3,60 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <title>Main</title>
+
+    <style>
+        .page_calc {
+            background: #497e49;
+        }
+        h1 {
+            color: #fff;
+        }
+        label {
+            color: #fff;
+            font-size: 25px;
+        }
+        input, select {
+            width:  200px;
+            height: 30px;
+            border-radius: 10px 10px 10px 10px;
+        }
+        .but {
+            background: #fac91b;
+        }
+    </style>
+
+
 </head>
 
 <body>
 
-<h1><center>КРЕДИТНЫЙ КАЛЬКУЛЯТОР</h1>
+<div class="page_calc">
 
-<br>
+    <h1><center>КРЕДИТНЫЙ КАЛЬКУЛЯТОР</h1>
 
-<form th:method="POST" th:action="@{/calculator/calculations}" th:object="${calculation}">
+    <br>
 
-    <label for="creditAmount">Сумма кредита, руб.</label>
-    <input type="text" th:field="*{creditAmount}" id="creditAmount"/>
-    <div style="color:red" th:if="${#fields.hasErrors('creditAmount')}" th:errors="*{creditAmount}">CreditAmount Error</div>
+    <form th:method="POST" th:action="@{/calculator/calculations}" th:object="${calculation}">
 
-    <br/>
-    <br/>
-    <br/>
+        <label for="creditAmount">Сумма кредита, руб.</label>
+        <input type="text" th:field="*{creditAmount}" id="creditAmount"/>
+        <div style="color:red" th:if="${#fields.hasErrors('creditAmount')}" th:errors="*{creditAmount}">CreditAmount Error</div>
 
-    <label for="percentRate">Процентная ставка, % годовых</label>
-    <input type="text" th:field="*{percentRate}" id="percentRate"/>
-    <div style="color:red" th:if="${#fields.hasErrors('percentRate')}" th:errors="*{percentRate}">CreditAmount Error</div>
+        <br/>
+        <br/>
+        <br/>
 
-    <br/>
-    <br/>
-    <br/>
+        <label for="percentRate">Процентная ставка, % годовых</label>
+        <input type="text" th:field="*{percentRate}" id="percentRate"/>
+        <div style="color:red" th:if="${#fields.hasErrors('percentRate')}" th:errors="*{percentRate}">CreditAmount Error</div>
 
-    <label for="creditTerm">Срок кредита, месяцев</label>
-    <input type="text" th:field="*{creditTerm}" id="creditTerm"/>
-    <div style="color:red" th:if="${#fields.hasErrors('creditTerm')}" th:errors="*{creditTerm}">CreditAmount Error</div>
+        <br/>
+        <br/>
+        <br/>
 
-    <br/>
-    <br/>
-    <br/>
+        <label for="creditTerm">Срок кредита, месяцев</label>
+        <input type="text" th:field="*{creditTerm}" id="creditTerm"/>
+        <div style="color:red" th:if="${#fields.hasErrors('creditTerm')}" th:errors="*{creditTerm}">CreditAmount Error</div>
 
-    <label for="currentDate">Дата</label>
-    <input type="date" th:field="*{currentDate}" id="currentDate"/>
+        <br/>
+        <br/>
+        <br/>
 
-    <br/>
-    <br/>
-    <br/>
+        <label for="currentDate">Дата</label>
+        <input type="date" th:field="*{currentDate}" id="currentDate"/>
 
-    <label for="repaymentType">Порядок погашения</label>
-    <select id="repaymentType" name="repaymentType">
-        <option value="Annuity">Аннуитетный</option>
-        <option value="Differentiated">Дифференцированный</option>
-    </select>
+        <br/>
+        <br/>
+        <br/>
 
-    <br/>
-    <br/>
-    <br/>
+        <label for="repaymentType">Порядок погашения</label>
+        <select id="repaymentType" name="repaymentType">
+            <option value="Annuity">Аннуитетный</option>
+            <option value="Differentiated">Дифференцированный</option>
+        </select>
 
-    <input type="submit" value="График платежей"/>
+        <br/>
+        <br/>
+        <br/>
 
-</form>
+        <input class="but" type="submit" value="График платежей"/>
+
+    </form>
+
+</div>
+
+
 
 </body>
 </html>

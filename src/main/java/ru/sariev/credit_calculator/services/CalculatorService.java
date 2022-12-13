@@ -54,7 +54,8 @@ public class CalculatorService {
         double shareOfPercentRate = calculation.getPercentRate() / 100.0 / 12.0;
 
         // Сумма ежемесячного платежа. Значение постоянное
-        double monthlyPaymentAmount = calculation.getCreditAmount() * (shareOfPercentRate + shareOfPercentRate / (Math.pow( (1 + shareOfPercentRate), calculation.getCreditTerm() ) - 1) );
+        double monthlyPaymentAmount = calculation.getCreditAmount() * (shareOfPercentRate + shareOfPercentRate /
+                (Math.pow( (1 + shareOfPercentRate), calculation.getCreditTerm() ) - 1) );
 
         // Ежемесячный начисленный процент на момент 1-го платежа
         double monthlyPercent = calculation.getCreditAmount() * shareOfPercentRate;
@@ -80,7 +81,9 @@ public class CalculatorService {
 
             overPayment += monthlyPercent;
 
-            Calculation newCalculation = new Calculation(getDateofNextPayment(calculation, i), monthlyPaymentAmount, monthlyPercent, bodyOfCredit, balanceOwed);
+            Calculation newCalculation = new Calculation(getDateofNextPayment(calculation, i),
+                    monthlyPaymentAmount, monthlyPercent, bodyOfCredit, balanceOwed);
+
             calculations.add(newCalculation);
         }
 
@@ -136,7 +139,8 @@ public class CalculatorService {
 
             overPayment += monthlyPercent;
 
-            Calculation newCalculation = new Calculation(getDateofNextPayment(calculation, i), monthlyPaymentAmount, monthlyPercent, bodyOfCredit, balanceOwed);
+            Calculation newCalculation = new Calculation(getDateofNextPayment(calculation, i),
+                    monthlyPaymentAmount, monthlyPercent, bodyOfCredit, balanceOwed);
             calculations.add(newCalculation);
         }
 
@@ -145,15 +149,18 @@ public class CalculatorService {
 
     // Фиксация остатка долга в первой строке графика платежей
     private void getFirstLineOfPayment(Calculation calculation, List<Calculation> calculations) {
+
         calculation.setRemainder(calculation.getCreditAmount());
         calculations.add(calculation);
     }
 
     // Вычисление даты следующего ежемесячного платежа
     private Date getDateofNextPayment(Calculation calculation, int count) {
+
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(calculation.getCurrentDate());
         calendar.add(Calendar.MONTH, +count);
+
         return calendar.getTime();
     }
 
