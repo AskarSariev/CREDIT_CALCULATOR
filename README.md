@@ -38,3 +38,6 @@ CreditCalculator is a web application for calculation a credit.
 
 ### Using
 
+http://localhost:8080/calculator
+http://localhost:8080/auth/registration
+
