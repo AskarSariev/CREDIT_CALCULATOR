@@ -38,7 +38,13 @@ CreditCalculator is a web application for calculation a credit.
 
 ### Using
 
+Before using the application user should registr. 
+
+![RegistrationPage](C:\Users\Аскар\Downloads\Новая папка (4)\Registration.jpg)
+
+
+
 http://localhost:8080/calculator
 http://localhost:8080/auth/registration
->>>>>>> 55244fed68a0e27133b7e0032e85f0c826a035de
+
 
