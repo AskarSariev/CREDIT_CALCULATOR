@@ -12,7 +12,7 @@ CreditCalculator is a web application for calculation a credit.
 ![Thymeleaf](https://img.shields.io/badge/-Thymeleaf-yellow?style=for-the-badge)
 ![Thymeleaf](https://img.shields.io/badge/-Validation-red?style=for-the-badge)
 
-### Installation
+### Getting started
 
 1. Clone the repo:
 
@@ -38,13 +38,18 @@ CreditCalculator is a web application for calculation a credit.
 
 ### Using
 
-Before using the application user should registr. 
+1. Before using the application user should registr
 
 <image src="/images/Registration.jpg" alt="RegistrationPage">
 
+2. Enter username, password
 
+<image src="/images/Auth.jpg" alt="AuthenticationPage">
 
-http://localhost:8080/calculator
-http://localhost:8080/auth/registration
+3. Enter data for credit calculation
 
+<image src="/images/Main.jpg" alt="MainPage">
 
+4. Output of the payment schedule
+
+<image src="/images/Schedule.jpg" alt="SchedulePage">
