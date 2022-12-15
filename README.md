@@ -40,7 +40,6 @@ CreditCalculator is a web application for calculation a credit.
 
 Before using the application user should registr. 
 
-![RegistrationPage](C:\Users\Аскар\Downloads\Новая папка (4)\Registration.jpg)
 <image src="/images/Registration.jpg" alt="RegistrationPage">
 
 
