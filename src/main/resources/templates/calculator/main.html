@@ -32,13 +32,13 @@
 
 <div class="page_calc">
 
-    <h1><center>КРЕДИТНЫЙ КАЛЬКУЛЯТОР</h1>
+    <h1><center>CREDIT CALCULATOR</h1>
 
     <br>
 
     <form th:method="POST" th:action="@{/calculator/calculations}" th:object="${calculation}">
 
-        <label for="creditAmount">Сумма кредита, руб.</label>
+        <label for="creditAmount">Credit amount, руб.</label>
         <input type="text" th:field="*{creditAmount}" id="creditAmount"/>
         <div style="color:red" th:if="${#fields.hasErrors('creditAmount')}" th:errors="*{creditAmount}">CreditAmount Error</div>
 
@@ -46,40 +46,40 @@
         <br/>
         <br/>
 
-        <label for="percentRate">Процентная ставка, % годовых</label>
+        <label for="percentRate">Percent rate, % year</label>
         <input type="text" th:field="*{percentRate}" id="percentRate"/>
-        <div style="color:red" th:if="${#fields.hasErrors('percentRate')}" th:errors="*{percentRate}">CreditAmount Error</div>
+        <div style="color:red" th:if="${#fields.hasErrors('percentRate')}" th:errors="*{percentRate}">PercentRate Error</div>
 
         <br/>
         <br/>
         <br/>
 
-        <label for="creditTerm">Срок кредита, месяцев</label>
+        <label for="creditTerm">Credit term, months</label>
         <input type="text" th:field="*{creditTerm}" id="creditTerm"/>
-        <div style="color:red" th:if="${#fields.hasErrors('creditTerm')}" th:errors="*{creditTerm}">CreditAmount Error</div>
+        <div style="color:red" th:if="${#fields.hasErrors('creditTerm')}" th:errors="*{creditTerm}">CreditTerm Error</div>
 
         <br/>
         <br/>
         <br/>
 
-        <label for="currentDate">Дата</label>
+        <label for="currentDate">Date</label>
         <input type="date" th:field="*{currentDate}" id="currentDate"/>
 
         <br/>
         <br/>
         <br/>
 
-        <label for="repaymentType">Порядок погашения</label>
+        <label for="repaymentType">Repayment type</label>
         <select id="repaymentType" name="repaymentType">
-            <option value="Annuity">Аннуитетный</option>
-            <option value="Differentiated">Дифференцированный</option>
+            <option value="Annuity">Annuity</option>
+            <option value="Differentiated">Differentiated</option>
         </select>
 
         <br/>
         <br/>
         <br/>
 
-        <input class="but" type="submit" value="График платежей"/>
+        <input class="but" type="submit" value="Payment schedule"/>
 
     </form>
 

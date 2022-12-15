@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Результаты расчета</title>
+    <title>Calculation results</title>
 </head>
 <style>
     table {
@@ -31,14 +31,14 @@
 </style>
 <body>
 
-<h1><center>Результаты расчета</h1>
+<h1><center>CALCULATION RESULTS</h1>
 
 <br>
 
-<input class="but" type="button" value="Вернуться" onclick="window.location.href='/calculator'"/>
+<input class="but" type="button" value="Return" onclick="window.location.href='/calculator'"/>
 <br/>
 
-<h2>Переплата: </h2>
+<h2>Overpayment: </h2>
 <h2 th:text="${#numbers.formatDecimal(overPayment, 2, 2)}" id="overPayment"></h2>
 
 <br>
@@ -46,11 +46,11 @@
 
 <table style="width:100%">
     <tr>
-        <th>Дата</th>
-        <th>Платеж</th>
-        <th>Проценты</th>
-        <th>Тело кредита</th>
-        <th>Остаток</th>
+        <th>Date</th>
+        <th>Payment</th>
+        <th>Percents</th>
+        <th>Body of credit</th>
+        <th>Remainder</th>
     </tr>
     <div th:each="calc : ${calculations}">
 

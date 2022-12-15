@@ -6,14 +6,14 @@ import javax.validation.constraints.Min;
 import java.util.Date;
 
 public class Calculation {
-    @Min(value = 10000, message = "Минимальная сумма 10 000 руб.")
+    @Min(value = 10000, message = "Min sum 10 000 RUB")
     private int creditAmount; // Сумма кредита
 
-    @Min(value = 1, message = "Минимальная процентная ставка 1%")
+    @Min(value = 1, message = "Min percent rate 1%")
     private double percentRate; // Процентная ставка
 
-    @Min(value = 1, message = "Минимальный срок кредитования 1 месяц")
-    @Max(value = 360, message = "Максимальный срок кредитования 360 месяцев")
+    @Min(value = 1, message = "Min credit term 1 month")
+    @Max(value = 360, message = "Max credit term 360 months")
     private int creditTerm; // Срок кредитования
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")

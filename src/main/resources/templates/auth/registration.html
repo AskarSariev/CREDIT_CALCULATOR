@@ -3,24 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
+    <style>
+        label {
+            color: rgb(255, 255, 255);
+            font-size: 25px;
+        }
+        input, select {
+            width:  200px;
+            height: 30px;
+            border-radius: 10px 10px 10px 10px;
+        }
+        .but {
+            background: #fac91b;
+        }
+        .page_reg {
+            background: #0e9fe2;
+        }
+    </style>
 </head>
 <body>
 
-<form th:method="POST" th:action="@{/auth/registration}" th:object="${user}">
-    <label for="username">Введите имя пользователя</label>
+<h1>REGISTRATION</h1>
+
+<form class="page_reg" th:method="POST" th:action="@{/auth/registration}" th:object="${user}">
+    <label for="username">Enter username</label>
     <input type="text" th:field="*{username}" id="username"/>
     <div style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</div>
 
     <br/>
     <br/>
 
-    <label for="password">Введите пароль</label>
+    <label for="password">Enter password</label>
     <input type="text" th:field="*{password}" id="password"/>
     <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
 
     <br/>
 
-    <input type="submit" value="Sign up!"/>
+    <input class="but" type="submit" value="Sign up!"/>
 
 </form>
 
