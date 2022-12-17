@@ -40,16 +40,16 @@ CreditCalculator is a web application for calculation a credit.
 
 1. Before using the application user should registr
 
-<image src="/images/Registration.jpg" alt="RegistrationPage">
+   <image src="/images/Registration.jpg" alt="RegistrationPage">
 
 2. Enter username, password
 
-<image src="/images/Auth.jpg" alt="AuthenticationPage">
+   <image src="/images/Auth.jpg" alt="AuthenticationPage">
 
 3. Enter data for credit calculation
 
-<image src="/images/Main.jpg" alt="MainPage">
+   <image src="/images/Main.jpg" alt="MainPage">
 
 4. Output of the payment schedule
 
-<image src="/images/Schedule.jpg" alt="SchedulePage">
+   <image src="/images/Schedule.jpg" alt="SchedulePage">
