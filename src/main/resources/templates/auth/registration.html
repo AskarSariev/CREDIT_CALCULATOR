@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Registration</title>
     <style>
+        body {
+            background: #8cc9e6;
+        }
         label {
             color: rgb(255, 255, 255);
             font-size: 25px;
@@ -15,17 +18,16 @@
         }
         .but {
             background: #fac91b;
+            width:  100px;
         }
-        .page_reg {
-            background: #0e9fe2;
-        }
+    
     </style>
 </head>
 <body>
 
 <h1>REGISTRATION</h1>
 
-<form class="page_reg" th:method="POST" th:action="@{/auth/registration}" th:object="${user}">
+<form th:method="POST" th:action="@{/auth/registration}" th:object="${user}">
     <label for="username">Enter username</label>
     <input type="text" th:field="*{username}" id="username"/>
     <div style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</div>
