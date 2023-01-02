@@ -1,6 +1,12 @@
 # CreditCalculator
 
+<image src="/images/CreditCalculator.png" alt="CreditCalculator" width="200" height="200">
+
+<br/>
+
 CreditCalculator is a web application for calculation a credit.
+
+<hr/>
 
 ### Tools
 
